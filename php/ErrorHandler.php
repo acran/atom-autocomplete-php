@@ -40,9 +40,9 @@ class ErrorHandler
     /**
      * Display uncaught exception in JSON.
      *
-     * @param \Exception $exception
+     * @param \Throwable $exception
      */
-    public static function onException(\Exception $exception)
+    public static function onException(\Throwable $exception)
     {
         die(
             json_encode(
