@@ -212,7 +212,7 @@ abstract class Tools
         );
 
         $result['return']['type'] = method_exists($function, 'getReturnType') && $function->hasReturnType() // PHP7
-            ? $function->getReturnType()->__toString()
+            ? (version_compare(PHP_VERSION, '7.1.0', '>=') ? $function->getReturnType()->getName() : $function->getReturnType()->__toString())
             : $result['return']['type']
         ;
 
