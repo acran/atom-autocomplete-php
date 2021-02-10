@@ -29,12 +29,11 @@ class ErrorHandler
         set_exception_handler('Peekmo\AtomAutocompletePhp\ErrorHandler::onException');
     }
 
-    /**
-     * @throws ErrorException on any error.
-     */
     public static function onError($code, $message, $file, $line, $context)
     {
-        throw new \ErrorException($message, $code, 1, $file, $line);
+        // call onException directly instead of throw'ing
+        // to work around https://bugs.php.net/bug.php?id=66216
+        self::onException(new \ErrorException($message, $code, 1, $file, $line));
     }
 
     /**
