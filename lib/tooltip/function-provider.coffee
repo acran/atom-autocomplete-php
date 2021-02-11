@@ -6,7 +6,7 @@ AbstractProvider = require './abstract-provider'
 module.exports =
 
 class FunctionProvider extends AbstractProvider
-    hoverEventSelectors: '.syntax--function-call'
+    hoverEventSelectors: '.syntax--function-call .syntax--function, .syntax--method-call .syntax--function'
 
     ###*
      * Retrieves a tooltip for the word given.
