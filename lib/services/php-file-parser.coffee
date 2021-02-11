@@ -710,8 +710,10 @@ module.exports =
         if value instanceof Array
             for val in value
                 if val.isMethod
-                    value = val
+                    return val
                     break
+            # return undefined if we didn't find a matching element
+            return
 
         return value
 
