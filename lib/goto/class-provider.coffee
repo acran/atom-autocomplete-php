@@ -3,8 +3,8 @@ AbstractProvider = require './abstract-provider'
 module.exports =
 
 class ClassProvider extends AbstractProvider
-    hoverEventSelectors: '.syntax--entity.syntax--inherited-class, .syntax--support.syntax--namespace, .syntax--support.syntax--class, .syntax--comment-clickable .syntax--region'
-    clickEventSelectors: '.syntax--entity.syntax--inherited-class, .syntax--support.syntax--namespace, .syntax--support.syntax--class'
+    hoverEventSelectors: '.syntax--entity.syntax--inherited-class, .syntax--support.syntax--namespace, .syntax--support.syntax--class, .syntax--typehinted .syntax--type, .syntax--comment-clickable .syntax--region'
+    clickEventSelectors: '.syntax--entity.syntax--inherited-class, .syntax--support.syntax--namespace, .syntax--support.syntax--class, .syntax--typehinted .syntax--type'
     gotoRegex: /^\\?[A-Z][A-za-z0-9_]*(\\[A-Z][A-Za-z0-9_])*$/
 
     ###*
