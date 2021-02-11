@@ -7,7 +7,7 @@ module.exports =
 class FunctionProvider extends AbstractProvider
     hoverEventSelectors: '.syntax--function-call .syntax--function, .syntax--method-call .syntax--function'
     clickEventSelectors: '.syntax--function-call .syntax--function, .syntax--method-call .syntax--function'
-    gotoRegex: /(?:(?:[a-zA-Z0-9_]*)\s*(?:\(.*\))?\s*(?:->|::)\s*)+([a-zA-Z0-9_]*)/
+    gotoRegex: /(?:(?:[a-zA-Z0-9_]*)\s*(?:\(.*\))?\s*(?:->|::)\s*)+([a-zA-Z0-9_]*)\(/
 
     ###*
      * Goto the class from the term given.

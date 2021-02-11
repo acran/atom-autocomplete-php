@@ -709,7 +709,7 @@ module.exports =
         # If there are multiple matches, just select the first method.
         if value instanceof Array
             for val in value
-                if val.isMethod
+                if val.isMethod || val.isStatic
                     return val
                     break
             # return undefined if we didn't find a matching element

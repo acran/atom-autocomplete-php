@@ -5,8 +5,8 @@ AbstractProvider = require './abstract-provider'
 module.exports =
 
 class PropertyProvider extends AbstractProvider
-    hoverEventSelectors: '.syntax--property'
-    clickEventSelectors: '.syntax--property'
+    hoverEventSelectors: '.syntax--property, .syntax--class.syntax--operator + .syntax--constant'
+    clickEventSelectors: '.syntax--property, .syntax--class.syntax--operator + .syntax--constant'
     gotoRegex: /^(\$\w+)?((->|::)\w+)+/
 
     ###*
@@ -34,7 +34,7 @@ class PropertyProvider extends AbstractProvider
         if not value
             return
 
-        atom.workspace.open(value.declaringStructure.filename, {
+        atom.workspace.open((value.declaringStructure || value.declaringClass).filename, {
             searchAllPanes: true
         })
 
