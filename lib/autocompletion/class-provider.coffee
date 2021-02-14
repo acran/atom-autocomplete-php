@@ -115,6 +115,15 @@ class ClassProvider extends AbstractProvider
                         prefix: prefix,
                         replacementPrefix: prefix
 
+        suggestions = suggestions.sort (a, b) ->
+          if a.text.includes prefix
+            return -1
+
+          if b.text.includes prefix
+            return 1
+
+          return 0
+
         return suggestions
 
     ###*
