@@ -48,4 +48,13 @@ class ConstantProvider extends AbstractProvider
                     type: 'constant',
                     description: 'Built-in PHP constant.'
 
+        suggestions = suggestions.sort (a, b) ->
+          if a.text.includes prefix
+            return -1
+
+          if b.text.includes prefix
+            return 1
+
+          return 0
+
         return suggestions

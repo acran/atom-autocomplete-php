@@ -67,5 +67,13 @@ class FunctionProvider extends AbstractProvider
 
                 suggestions.push suggestion
 
+        suggestions = suggestions.sort (a, b) ->
+          if a.text.includes prefix
+            return -1
+
+          if b.text.includes prefix
+            return 1
+
+          return 0
 
         return suggestions

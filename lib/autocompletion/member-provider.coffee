@@ -121,4 +121,13 @@ class MemberProvider extends AbstractProvider
                     description : if ele.args.descriptions.short? then ele.args.descriptions.short else ''
                     className   : if ele.args.deprecated then 'php-atom-autocomplete-strike' else ''
 
+        suggestions = suggestions.sort (a, b) ->
+          if a.text.includes prefix
+            return -1
+
+          if b.text.includes prefix
+            return 1
+
+          return 0
+
         return suggestions

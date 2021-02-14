@@ -44,4 +44,13 @@ class VariableProvider extends AbstractProvider
                 type: 'variable',
                 replacementPrefix: prefix
 
+        suggestions = suggestions.sort (a, b) ->
+          if a.text.includes prefix
+            return -1
+
+          if b.text.includes prefix
+            return 1
+
+          return 0
+
         return suggestions
