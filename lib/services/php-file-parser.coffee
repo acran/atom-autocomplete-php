@@ -58,6 +58,8 @@ module.exports =
         if isInFunction
             matches.push "$this"
 
+        matches = matches.filter (match, index) -> matches.indexOf(match) == index
+
         return matches
 
     ###*
